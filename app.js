@@ -13,7 +13,7 @@ function render(){
     html+=`<section id="${lib.n}"><h2>${lib.n}</h2><p>${lib.d}${lib.p?` Install with <code>${lib.p}</code>`:""}</p>`+fs.map(f=>`<article class="fn"><header><h3>${esc(f[0])}</h3><p>${esc(f[1])}</p></header><div class="code"><button class="cp" type="button">Copy</button><pre>${esc(f[2])}\n<span class="o">${esc(f[3]).split("\n").map(l=>"# "+l).join("\n")}</span></pre></div></article>`).join("")+`</section>`;
   });
   main.innerHTML=hits?html:`<p class="empty">No functions match “${esc(q.value)}”. Try a shorter word like sort, file or date.</p>`;
-  const sl=nav.scrollLeft,st=nav.scrollTop;nav.innerHTML=links;nav.scrollLeft=sl;nav.scrollTop=st;
+  const sl=nav.scrollLeft,st=nav.scrollTop;nav.innerHTML=links;nav.scrollLeft=sl;nav.scrollTop=st;const on=nav.querySelector("a.on");if(on&&nav.scrollWidth>nav.clientWidth&&getComputedStyle(nav).flexDirection==="row")nav.scrollTo({left:on.offsetLeft-(nav.clientWidth-on.offsetWidth)/2,behavior:"smooth"});
 }
 main.addEventListener("click",e=>{
   const b=e.target.closest("button.cp");if(!b)return;

@@ -38,4 +38,31 @@ button.cp:hover{background:#ffffff22}
 .empty{color:var(--mute);padding:40px 0}
 section code{font-family:"JetBrains Mono",monospace;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 6px;font-size:.85rem;color:var(--ink)}
 .grp{margin:12px 10px 2px;font-size:.8rem;color:var(--mute);white-space:nowrap;align-self:center}
-@media (max-width:760px){.wrap{grid-template-columns:1fr;gap:12px}aside{position:static;max-height:none}nav{flex:none;flex-direction:row;overflow-x:auto;overflow-y:hidden;padding-bottom:6px}nav a{white-space:nowrap;gap:8px}}
+
+@media (max-width:760px){
+.wrap{grid-template-columns:1fr;gap:0;padding:0 0 48px}
+body.hide .wrap{grid-template-columns:1fr}
+.bar,body.hide .bar{display:none}
+body.hide aside{display:flex}
+aside{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;max-height:none;padding:12px 14px 10px;background:color-mix(in srgb,var(--bg) 88%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+#hide,.sub{display:none}
+h1{font-size:1.35rem;margin:0;display:flex;align-items:center;gap:8px}
+h1::before{content:"\1F40D"}
+input{margin-top:10px;padding:12px 14px;border-radius:12px;font-size:16px}
+nav{flex:none;flex-direction:row;gap:8px;margin:10px -14px 0;padding:2px 14px 4px;overflow-x:auto;overflow-y:hidden;position:relative;scroll-snap-type:x proximity;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+nav::-webkit-scrollbar{display:none}
+nav a{flex:none;scroll-snap-align:center;padding:8px 14px;border:1px solid var(--line);border-radius:999px;background:var(--surface);white-space:nowrap;font-size:.85rem}
+nav a.on{border-color:var(--accent)}
+nav a small{display:none}
+.grp{margin:0 2px 0 8px}
+main{padding:18px 14px 0}
+section{margin-bottom:0}
+section>h2{font-size:1.5rem}
+section>p{margin-bottom:16px}
+.fn{border-radius:16px;margin-bottom:16px;box-shadow:0 1px 3px #0000000f}
+.fn header{padding:14px 16px 6px}
+.fn h3{font-size:.95rem;word-break:break-word}
+.code{display:flex;flex-direction:column}
+button.cp{position:static;align-self:flex-end;margin:10px 12px 0;padding:6px 14px;font-size:.8rem}
+pre{font-size:.8rem;padding:8px 16px 16px}
+}
